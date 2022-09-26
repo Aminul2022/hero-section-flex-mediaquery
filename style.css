@@ -1,0 +1,158 @@
+:root {
+    --blue: #0A0C19;
+    --dark-violet: #1B1938;
+    --violet: #AA5CDB;
+    --white: #fff;
+    --off-white: #dcdcdc;
+    --primary-font: 'Inter', sans-serif;
+    --secondar-font: 'Lexend Deca', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid tomato; */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: blue; */
+    height: 100vh;
+    background-color: var(--blue);
+}
+
+.card {
+    width: 70%;
+    height: 60vh;
+    /* background-color: red; */
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card-text {
+    height: 100%;
+    width: 50%;
+    background-color: var(--dark-violet);
+    color: var(--white);
+    font-family: var(--primary-font);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.card-title>h1 {
+    margin-bottom: 25px;
+}
+
+.card-title>h1>span {
+    color: var(--violet);
+}
+
+
+.card-stat {
+    display: flex;
+    gap: 25px;
+}
+
+/* Under card image */
+.card-image {
+    height: 100%;
+    width: 50%;
+    /* background-color: blue; */
+    position: relative;
+}
+
+.card-image>img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: left;
+    filter: grayscale(100%);
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    background-color: var(--violet);
+    position: absolute;
+    /* top: 0;
+    right: 0; */
+    opacity: 0.3;
+    z-index: 999;
+    transition: all ease-in-out 300ms;
+}
+
+.card:hover .overlay {
+    opacity: 0;
+}
+
+.card:hover .card-image>img {
+    filter: grayscale(0%);
+}
+
+@media only screen and (max-width: 1100px) {
+    .card-text {
+        width: 75%;
+    }
+
+    .card-image {
+        width: 25%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .card {
+        flex-direction: column-reverse;
+        height: 100vh;
+    }
+
+    .card-image {
+        width: 100%;
+    }
+
+    .card-text {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    .card-text {
+        height: 70%;
+        padding: 25px;
+    }
+
+    .card-image {
+        height: 30%;
+    }
+
+    .card-title>h1 {
+        font-size: 1.5rem;
+    }
+
+}
+
+
+/* only for test */
+/* @media only screen and (max-width: 1100px) {
+    .container {
+        background-color: red;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .container {
+        background-color: yellow;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+        background-color: green;
+    }
+} */
